@@ -1,0 +1,130 @@
+
+body
+{
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url('/assets/img/bg.jpg');
+  margin: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h1{
+text-align: center;
+margin-top: 3rem;
+
+}
+.categories-title
+{
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.category-card-container
+{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.category-card
+{
+  text-align: center;
+  background: white;
+  margin: 0.15em;
+}
+
+.category-img
+{
+  width: 90%;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.category-title
+{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 400px)
+{
+  .category-card
+  {
+    height: 31vw;
+    width: 30%;
+  }
+  .category-title
+  {
+    font-size: 4vw;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 1000px)
+{
+  .category-card
+  {
+    width: 120px;
+    height: 130px;
+  }
+  .category-title
+  {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 700px)
+{
+  h1
+  {
+    font-size: 20px;
+    margin: 20px;
+  }
+  .categories-title
+  {
+    margin-left: 20px;
+  }
+  .products-category
+  {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 700px)
+{
+  h1
+  {
+    font-size: 40px;
+    margin-left: 50px;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 1000px)
+{
+  .categories
+  {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .categories-title
+  {
+    margin-left: 45px;
+  }
+}
+
+@media screen and (min-width: 1000px)
+{
+  .categories
+  {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .categories-title
+  {
+    margin-left: 25px;
+    font-size: 20px;
+  }
+  .category-card
+  {
+    width: 24%;
+  }
+}

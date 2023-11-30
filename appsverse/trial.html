@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegant List Page with Popup</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .list-container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      border-bottom: 1px solid #ddd;
+      padding: 30px 0;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    li img {
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+      border-radius: 50%;
+    }
+
+    li span {
+      font-size: 24px;
+    }
+
+    .popup-container {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .popup-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .popup-text {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .popup-button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .close-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      color: #666;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Elegant List Page with Popup</h1>
+  </header>
+
+  <div class="list-container">
+    <ul>
+      <li onclick="showPopup('Item 1', 'Details for Item 1', '/assets/img/bla.png')">
+        <img src="/assets/img/bla.png" alt="Image 1">
+        <span>Item 1</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Popup container -->
+  <div class="popup-container" id="popup">
+    <span class="close-icon" onclick="closePopup()">&#10006;</span>
+    <img class="popup-img" id="popupImage" alt="Popup Image">
+    <p class="popup-text" id="popupTitle"></p>
+    <p class="popup-text" id="popupContent"></p>
+    <button class="popup-button" onclick="downloadFile()">Download</button>
+  </div>
+
+  <script>
+    function showPopup(title, content, imageUrl) {
+      var popup = document.getElementById('popup');
+      document.getElementById('popupTitle').innerText = title;
+      document.getElementById('popupContent').innerText = content;
+      document.getElementById('popupImage').src = imageUrl;
+      popup.style.display = 'block';
+      document.addEventListener('click', closePopupOnOutsideClick);
+    }
+
+    function closePopup() {
+      var popup = document.getElementById('popup');
+      popup.style.display = 'none';
+      document.removeEventListener('click', closePopupOnOutsideClick);
+    }
+
+    function closePopupOnOutsideClick(event) {
+      var popup = document.getElementById('popup');
+      if (!popup.contains(event.target)) {
+        closePopup();
+      }
+    }
+
+    function downloadFile() {
+      alert('Simulating file download. Replace this with your download logic.');
+      closePopup();
+    }
+  </script>
+
+</body>
+</html>
